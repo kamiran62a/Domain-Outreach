@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domain Outreach</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0E0F11;--surface:#16181C;--border:#2A2D35;--accent:#4F8EF7;--accent2:#7C3AED;--text:#F0F2F7;--muted:#6B7280;--success:#10B981;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:36px 16px;}
+h1{font-size:24px;font-weight:600;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:28px;text-align:center;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;width:100%;max-width:600px;margin-bottom:16px;}
+.field{margin-bottom:16px;}
+label{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;}
+input,select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color .2s;}
+input:focus,select:focus{border-color:var(--accent);}
+input::placeholder{color:var(--muted);}
+select option{background:var(--surface);}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.lang-row{display:flex;gap:8px;}
+.lang-btn{flex:1;padding:9px;border-radius:9px;border:1px solid var(--border);background:var(--bg);color:var(--muted);font-size:13px;cursor:pointer;transition:all .2s;}
+.lang-btn.active{border-color:var(--accent);color:var(--accent);background:#1a2540;}
+.btn{width:100%;padding:13px;border-radius:11px;border:none;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:15px;font-weight:600;cursor:pointer;margin-top:4px;}
+.btn:disabled{opacity:.4;cursor:not-allowed;}
+.result-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;width:100%;max-width:600px;display:none;}
+.result-card.show{display:block;}
+.rl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.subject-box{font-size:13px;color:var(--accent);background:#1C2033;padding:10px 13px;border-radius:8px;margin-bottom:16px;}
+.body-box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:13px;line-height:1.75;white-space:pre-wrap;color:var(--text);min-height:100px;margin-bottom:18px;}
+.actions{display:flex;gap:10px;margin-bottom:14px;}
+.abt{flex:1;padding:11px;border-radius:9px;border:1px solid var(--border);background:transparent;color:var(--text);font-size:13px;cursor:pointer;transition:all .2s;}
+.abt.send{background:var(--success);border-color:var(--success);color:#fff;}
+.abt:disabled{opacity:.4;cursor:not-allowed;}
+.sent-msg{display:none;text-align:center;padding:12px;background:#0d2b1f;border:1px solid var(--success);border-radius:10px;color:var(--success);font-size:14px;margin-bottom:14px;}
+.err-msg{display:none;text-align:center;padding:12px;background:#2b0d0d;border:1px solid #ef4444;border-radius:10px;color:#ef4444;font-size:13px;margin-bottom:14px;}
+.tip{font-size:12px;color:var(--muted);text-align:center;}
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.2);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block;margin-right:6px;vertical-align:middle;}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<h1>إرسال إيميل البيع ✦</h1>
+<div class="card">
+  <div class="row">
+    <div class="field"><label>اسم المستلم</label><input id="recipient" placeholder="Dani, Marco..."/></div>
+    <div class="field"><label>إيميل المستلم</label><input id="email" type="email" placeholder="owner@cafe.com"/></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>اسم الدومين</label><input id="domain" placeholder="tirol.cafe"/></div>
+    <div class="field"><label>نوع النشاط</label>
+      <select id="btype">
+        <option value="cafe">Café / Coffee shop</option>
+        <option value="restaurant">Restaurant</option>
+        <option value="taxi">Taxi company</option>
+        <option value="auto">Auto / Car services</option>
+        <option value="startup">Startup / App / Tech</option>
+        <option value="fintech">Fintech / Payments</option>
+        <option value="general">General / Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="field"><label>لغة الإيميل</label>
+    <div class="lang-row">
+      <button class="lang-btn active" onclick="setLang('de',this)">🇩🇪 Deutsch</button>
+      <button class="lang-btn" onclick="setLang('en',this)">🇬🇧 English</button>
+      <button class="lang-btn" onclick="setLang('ar',this)">🇸🇦 العربية</button>
+    </div>
+  </div>
+  <button class="btn" id="genBtn" onclick="generate()">✦ اكتب الإيميل</button>
+</div>
+<div class="result-card" id="resultCard">
+  <div class="rl">Subject</div>
+  <div class="subject-box" id="subjectOut"></div>
+  <div class="rl">Body</div>
+  <div class="body-box" id="bodyOut"></div>
+  <div class="sent-msg" id="sentMsg">✓ تم الإرسال بنجاح من kamiran@kamiran.me</div>
+  <div class="err-msg" id="errMsg"></div>
+  <div class="actions">
+    <button class="abt" onclick="copyAll()">📋 نسخ</button>
+    <button class="abt send" id="sendBtn" onclick="sendEmail()">📨 إرسال الآن</button>
+  </div>
+  <p class="tip">⚡ يُرسل مباشرة من kamiran@kamiran.me</p>
+</div>
+<script>
+let lang='de',currentSubject='',currentBody='',currentEmail='';
+function setLang(l,btn){lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+async function generate(){
+  const recipient=document.getElementById('recipient').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const domain=document.getElementById('domain').value.trim();
+  const btype=document.getElementById('btype').value;
+  if(!domain){alert('أدخل اسم الدومين');return;}
+  currentEmail=email;
+  const btn=document.getElementById('genBtn');
+  btn.disabled=true;btn.innerHTML='<span class="spinner"></span>جاري الكتابة...';
+  document.getElementById('sentMsg').style.display='none';
+  document.getElementById('errMsg').style.display='none';
+  try{
+    const res=await fetch('/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({recipient,domain,btype,lang})});
+    const data=await res.json();
+    currentSubject=data.subject;currentBody=data.body;
+    document.getElementById('subjectOut').textContent=data.subject;
+    document.getElementById('bodyOut').textContent=data.body;
+    document.getElementById('resultCard').classList.add('show');
+  }catch(e){alert('خطأ — حاول مرة ثانية');}
+  btn.disabled=false;btn.innerHTML='✦ اكتب الإيميل';
+}
+async function sendEmail(){
+  if(!currentEmail){alert('أدخل إيميل المستلم أولاً');return;}
+  const btn=document.getElementById('sendBtn');
+  btn.disabled=true;btn.innerHTML='<span class="spinner"></span>جاري الإرسال...';
+  document.getElementById('sentMsg').style.display='none';
+  document.getElementById('errMsg').style.display='none';
+  try{
+    const res=await fetch('/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({to_email:currentEmail,subject:currentSubject,body:currentBody})});
+    const data=await res.json();
+    if(data.success){document.getElementById('sentMsg').style.display='block';}
+    else{document.getElementById('errMsg').textContent='خطأ: '+data.error;document.getElementById('errMsg').style.display='block';}
+  }catch(e){document.getElementById('errMsg').textContent='خطأ في الاتصال';document.getElementById('errMsg').style.display='block';}
+  btn.disabled=false;btn.innerHTML='📨 إرسال الآن';
+}
+function copyAll(){
+  navigator.clipboard.writeText('Subject: '+currentSubject+'\n\n'+currentBody);
+  const btn=event.target;btn.textContent='✓ تم النسخ';setTimeout(()=>btn.textContent='📋 نسخ',2000);
+}
+</script>
+</body>
+</html>
