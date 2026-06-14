@@ -6,7 +6,7 @@
 <title>Domain Outreach</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0E0F11;--surface:#16181C;--border:#2A2D35;--accent:#4F8EF7;--accent2:#7C3AED;--text:#F0F2F7;--muted:#6B7280;--success:#10B981;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:36px 16px;}
 h1{font-size:24px;font-weight:600;background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:28px;text-align:center;}
@@ -43,13 +43,13 @@ select option{background:var(--surface);}
 <h1>إرسال إيميل البيع ✦</h1>
 <div class="card">
   <div class="row">
-    <div class="field"><label>اسم المستلم</label><input id="recipient" placeholder="Dani, Marco..."/></div>
-    <div class="field"><label>إيميل المستلم</label><input id="email" type="email" placeholder="owner@cafe.com"/></div>
+    <div class="field"><label>اسم المستلم</label><input id="inp-name" placeholder="Dani, Marco..."/></div>
+    <div class="field"><label>إيميل المستلم</label><input id="inp-email" type="email" placeholder="owner@cafe.com"/></div>
   </div>
   <div class="row">
-    <div class="field"><label>اسم الدومين</label><input id="domain" placeholder="tirol.cafe"/></div>
+    <div class="field"><label>اسم الدومين</label><input id="inp-domain" placeholder="tirol.cafe"/></div>
     <div class="field"><label>نوع النشاط</label>
-      <select id="btype">
+      <select id="inp-btype">
         <option value="cafe">Café / Coffee shop</option>
         <option value="restaurant">Restaurant</option>
         <option value="taxi">Taxi company</option>
@@ -69,11 +69,12 @@ select option{background:var(--surface);}
   </div>
   <button class="btn" id="genBtn" onclick="generate()">✦ اكتب الإيميل</button>
 </div>
+
 <div class="result-card" id="resultCard">
-  <div class="rl">Subject</div>
-  <div class="subject-box" id="subjectOut"></div>
-  <div class="rl">Body</div>
-  <div class="body-box" id="bodyOut"></div>
+  <div class="rl">SUBJECT</div>
+  <div class="subject-box" id="outSubject"></div>
+  <div class="rl">BODY</div>
+  <div class="body-box" id="outBody"></div>
   <div class="sent-msg" id="sentMsg">✓ تم الإرسال بنجاح من kamiran@kamiran.me</div>
   <div class="err-msg" id="errMsg"></div>
   <div class="actions">
@@ -82,47 +83,95 @@ select option{background:var(--surface);}
   </div>
   <p class="tip">⚡ يُرسل مباشرة من kamiran@kamiran.me</p>
 </div>
+
 <script>
-let lang='de',currentSubject='',currentBody='',currentEmail='';
-function setLang(l,btn){lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
-async function generate(){
-  const recipient=document.getElementById('recipient').value.trim();
-  const email=document.getElementById('email').value.trim();
-  const domain=document.getElementById('domain').value.trim();
-  const btype=document.getElementById('btype').value;
-  if(!domain){alert('أدخل اسم الدومين');return;}
-  currentEmail=email;
-  const btn=document.getElementById('genBtn');
-  btn.disabled=true;btn.innerHTML='<span class="spinner"></span>جاري الكتابة...';
-  document.getElementById('sentMsg').style.display='none';
-  document.getElementById('errMsg').style.display='none';
-  try{
-    const res=await fetch('/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({recipient,domain,btype,lang})});
-    const data=await res.json();
-    currentSubject=data.subject;currentBody=data.body;
-    document.getElementById('subjectOut').textContent=data.subject;
-    document.getElementById('bodyOut').textContent=data.body;
+var lang = 'de';
+
+function setLang(l, btn) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+
+function getField(id) {
+  return document.getElementById(id).value.trim();
+}
+
+async function generate() {
+  var recipient = getField('inp-name');
+  var email = getField('inp-email');
+  var domain = getField('inp-domain');
+  var btype = getField('inp-btype');
+
+  if (!domain) { alert('أدخل اسم الدومين'); return; }
+
+  var btn = document.getElementById('genBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>جاري الكتابة...';
+  document.getElementById('sentMsg').style.display = 'none';
+  document.getElementById('errMsg').style.display = 'none';
+
+  try {
+    var res = await fetch('/generate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({recipient: recipient, domain: domain, btype: btype, lang: lang})
+    });
+    var data = await res.json();
+    document.getElementById('outSubject').textContent = data.subject;
+    document.getElementById('outBody').textContent = data.body;
     document.getElementById('resultCard').classList.add('show');
-  }catch(e){alert('خطأ — حاول مرة ثانية');}
-  btn.disabled=false;btn.innerHTML='✦ اكتب الإيميل';
+  } catch(e) {
+    alert('خطأ في الكتابة — حاول مرة ثانية');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '✦ اكتب الإيميل';
 }
-async function sendEmail(){
-  if(!currentEmail){alert('أدخل إيميل المستلم أولاً');return;}
-  const btn=document.getElementById('sendBtn');
-  btn.disabled=true;btn.innerHTML='<span class="spinner"></span>جاري الإرسال...';
-  document.getElementById('sentMsg').style.display='none';
-  document.getElementById('errMsg').style.display='none';
-  try{
-    const res=await fetch('/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({to_email:currentEmail,subject:currentSubject,body:currentBody})});
-    const data=await res.json();
-    if(data.success){document.getElementById('sentMsg').style.display='block';}
-    else{document.getElementById('errMsg').textContent='خطأ: '+data.error;document.getElementById('errMsg').style.display='block';}
-  }catch(e){document.getElementById('errMsg').textContent='خطأ في الاتصال';document.getElementById('errMsg').style.display='block';}
-  btn.disabled=false;btn.innerHTML='📨 إرسال الآن';
+
+async function sendEmail() {
+  var email = getField('inp-email');
+  var subject = document.getElementById('outSubject').textContent;
+  var body = document.getElementById('outBody').textContent;
+
+  if (!email) { alert('أدخل إيميل المستلم أولاً'); return; }
+  if (!subject) { alert('اضغط اكتب الإيميل أولاً'); return; }
+
+  var btn = document.getElementById('sendBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>جاري الإرسال...';
+  document.getElementById('sentMsg').style.display = 'none';
+  document.getElementById('errMsg').style.display = 'none';
+
+  try {
+    var res = await fetch('/send', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({to_email: email, subject: subject, body: body})
+    });
+    var data = await res.json();
+    if (data.success) {
+      document.getElementById('sentMsg').style.display = 'block';
+    } else {
+      document.getElementById('errMsg').textContent = 'خطأ: ' + data.error;
+      document.getElementById('errMsg').style.display = 'block';
+    }
+  } catch(e) {
+    document.getElementById('errMsg').textContent = 'خطأ في الاتصال';
+    document.getElementById('errMsg').style.display = 'block';
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '📨 إرسال الآن';
 }
-function copyAll(){
-  navigator.clipboard.writeText('Subject: '+currentSubject+'\n\n'+currentBody);
-  const btn=event.target;btn.textContent='✓ تم النسخ';setTimeout(()=>btn.textContent='📋 نسخ',2000);
+
+function copyAll() {
+  var subject = document.getElementById('outSubject').textContent;
+  var body = document.getElementById('outBody').textContent;
+  navigator.clipboard.writeText('Subject: ' + subject + '\n\n' + body);
+  var btn = event.target;
+  btn.textContent = '✓ تم النسخ';
+  setTimeout(function(){ btn.textContent = '📋 نسخ'; }, 2000);
 }
 </script>
 </body>
