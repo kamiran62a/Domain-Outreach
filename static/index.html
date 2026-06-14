@@ -41,25 +41,14 @@ select option{background:var(--surface)}
 </head>
 <body>
 <h1>إرسال إيميل البيع ✦</h1>
-
 <div class="card">
   <div class="row">
-    <div class="field">
-      <label>اسم المستلم</label>
-      <input id="f-name" placeholder="Dani, Marco...">
-    </div>
-    <div class="field">
-      <label>إيميل المستلم</label>
-      <input id="f-email" type="email" placeholder="owner@cafe.com">
-    </div>
+    <div class="field"><label>اسم المستلم</label><input id="f-name" placeholder="Dani, Marco..."></div>
+    <div class="field"><label>إيميل المستلم</label><input id="f-email" type="email" placeholder="owner@cafe.com"></div>
   </div>
   <div class="row">
-    <div class="field">
-      <label>اسم الدومين</label>
-      <input id="f-domain" placeholder="tirol.cafe">
-    </div>
-    <div class="field">
-      <label>نوع النشاط</label>
+    <div class="field"><label>اسم الدومين</label><input id="f-domain" placeholder="tirol.cafe"></div>
+    <div class="field"><label>نوع النشاط</label>
       <select id="f-type">
         <option value="cafe">Café / Coffee shop</option>
         <option value="restaurant">Restaurant</option>
@@ -71,8 +60,7 @@ select option{background:var(--surface)}
       </select>
     </div>
   </div>
-  <div class="field">
-    <label>لغة الإيميل</label>
+  <div class="field"><label>لغة الإيميل</label>
     <div class="langs">
       <button class="lb on" onclick="setLang('de',this)">🇩🇪 Deutsch</button>
       <button class="lb" onclick="setLang('en',this)">🇬🇧 English</button>
@@ -81,7 +69,6 @@ select option{background:var(--surface)}
   </div>
   <button class="btn" id="genBtn" onclick="generate()">✦ اكتب الإيميل</button>
 </div>
-
 <div class="res" id="resCard">
   <div class="rl">SUBJECT</div>
   <div class="subj" id="r-subj"></div>
@@ -95,94 +82,46 @@ select option{background:var(--surface)}
   </div>
   <p class="tip">⚡ يُرسل مباشرة من kamiran@kamiran.me</p>
 </div>
-
 <script>
-var lang = 'de';
-
-function setLang(l, btn) {
-  lang = l;
-  document.querySelectorAll('.lb').forEach(function(b){ b.classList.remove('on'); });
-  btn.classList.add('on');
-}
-
-function val(id) { return document.getElementById(id).value.trim(); }
-function el(id) { return document.getElementById(id); }
-
-async function generate() {
-  var domain = val('f-domain');
-  if (!domain) { alert('أدخل اسم الدومين'); return; }
-
-  var btn = el('genBtn');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="sp"></span>جاري الكتابة...';
-  el('ok').style.display = 'none';
-  el('er').style.display = 'none';
-
-  try {
-    var r = await fetch('/generate', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        recipient: val('f-name'),
-        domain: domain,
-        btype: val('f-type'),
-        lang: lang
-      })
-    });
-    var data = await r.json();
-    el('r-subj').textContent = data.subject;
-    el('r-body').textContent = data.body;
+var lang='de';
+function setLang(l,btn){lang=l;document.querySelectorAll('.lb').forEach(function(b){b.classList.remove('on')});btn.classList.add('on')}
+function val(id){return document.getElementById(id).value.trim()}
+function el(id){return document.getElementById(id)}
+async function generate(){
+  var domain=val('f-domain');
+  if(!domain){alert('أدخل اسم الدومين');return}
+  var btn=el('genBtn');
+  btn.disabled=true;btn.innerHTML='<span class="sp"></span>جاري الكتابة...';
+  el('ok').style.display='none';el('er').style.display='none';
+  try{
+    var r=await fetch('/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({recipient:val('f-name'),domain:domain,btype:val('f-type'),lang:lang})});
+    var data=await r.json();
+    el('r-subj').textContent=data.subject;
+    el('r-body').textContent=data.body;
     el('resCard').classList.add('show');
-  } catch(e) {
-    alert('خطأ — حاول مرة ثانية');
-  }
-
-  btn.disabled = false;
-  btn.innerHTML = '✦ اكتب الإيميل';
+  }catch(e){alert('خطأ — حاول مرة ثانية')}
+  btn.disabled=false;btn.innerHTML='✦ اكتب الإيميل';
 }
-
-async function sendNow() {
-  var email = val('f-email');
-  var subject = el('r-subj').textContent;
-  var body = el('r-body').textContent;
-
-  if (!email) { alert('أدخل إيميل المستلم'); return; }
-  if (!subject) { alert('اضغط اكتب الإيميل أولاً'); return; }
-
-  var btn = el('sendBtn');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="sp"></span>جاري الإرسال...';
-  el('ok').style.display = 'none';
-  el('er').style.display = 'none';
-
-  try {
-    var r = await fetch('/send', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({to_email: email, subject: subject, body: body})
-    });
-    var data = await r.json();
-    if (data.success) {
-      el('ok').style.display = 'block';
-    } else {
-      el('er').textContent = 'خطأ: ' + data.error;
-      el('er').style.display = 'block';
-    }
-  } catch(e) {
-    el('er').textContent = 'خطأ في الاتصال';
-    el('er').style.display = 'block';
-  }
-
-  btn.disabled = false;
-  btn.innerHTML = '📨 إرسال الآن';
+async function sendNow(){
+  var email=val('f-email');
+  var subject=el('r-subj').textContent;
+  var body=el('r-body').textContent;
+  if(!email){alert('أدخل إيميل المستلم');return}
+  if(!subject){alert('اضغط اكتب الإيميل أولاً');return}
+  var btn=el('sendBtn');
+  btn.disabled=true;btn.innerHTML='<span class="sp"></span>جاري الإرسال...';
+  el('ok').style.display='none';el('er').style.display='none';
+  try{
+    var r=await fetch('/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({to_email:email,subject:subject,body:body})});
+    var data=await r.json();
+    if(data.success){el('ok').style.display='block'}
+    else{el('er').textContent='خطأ: '+data.error;el('er').style.display='block'}
+  }catch(e){el('er').textContent='خطأ في الاتصال';el('er').style.display='block'}
+  btn.disabled=false;btn.innerHTML='📨 إرسال الآن';
 }
-
-function copyAll() {
-  var t = 'Subject: ' + el('r-subj').textContent + '\n\n' + el('r-body').textContent;
-  navigator.clipboard.writeText(t);
-  var b = event.target;
-  b.textContent = '✓ تم النسخ';
-  setTimeout(function(){ b.textContent = '📋 نسخ'; }, 2000);
+function copyAll(){
+  navigator.clipboard.writeText('Subject: '+el('r-subj').textContent+'\n\n'+el('r-body').textContent);
+  var b=event.target;b.textContent='✓ تم النسخ';setTimeout(function(){b.textContent='📋 نسخ'},2000);
 }
 </script>
 </body>
