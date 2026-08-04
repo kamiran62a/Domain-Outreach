@@ -1,0 +1,50 @@
+{
+  "id": "1993-94",
+  "label_ar": "١٩٩٣–١٩٩٤",
+  "label_en": "1993–1994",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Rey",
+      "Champions League"
+    ],
+    "league_position": 1,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "La Liga"
+    ]
+  },
+  "matches": [
+    {
+      "date": "1994-01-08",
+      "competition": "La Liga",
+      "round": null,
+      "home": "FC Barcelona",
+      "away": "Real Madrid",
+      "score": "5-0",
+      "half_time": null,
+      "notes": "فوز ساحق على ريال مدريد في كامب نو، من أبرز مباريات فريق الحلم بقيادة كرويف، مع هدف مميز لروماريو",
+      "is_notable": true
+    },
+    {
+      "date": "1994-05-18",
+      "competition": "Champions League",
+      "round": "Final",
+      "home": "AC Milan",
+      "away": "FC Barcelona",
+      "score": "4-0",
+      "half_time": null,
+      "notes": "خسارة برشلونة الثقيلة أمام إيه سي ميلان في نهائي أثينا، إنهاء مخيب لموسم فريق الحلم في أوروبا",
+      "is_notable": true
+    }
+  ]
+}

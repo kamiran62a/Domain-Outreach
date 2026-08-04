@@ -1,0 +1,37 @@
+{
+  "id": "1960-61",
+  "label_ar": "١٩٦٠–١٩٦١",
+  "label_en": "1960–1961",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Generalísimo",
+      "European Cup"
+    ],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": []
+  },
+  "matches": [
+    {
+      "date": "1961-05-31",
+      "competition": "European Cup",
+      "round": "Final",
+      "home": "SL Benfica",
+      "away": "FC Barcelona",
+      "score": "3-2",
+      "half_time": null,
+      "notes": "خسارة برشلونة المفاجئة في نهائي كأس أوروبا أمام بنفيكا الپرتغالي في ملعب فانكدورف بمدينة برن، رغم اصطدام الكرة بالقائم عدة مرات؛ سجل ساندور كوتشيش هدفي برشلونة.",
+      "is_notable": true
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "2010-11",
+  "label_ar": "٢٠١٠–٢٠١١",
+  "label_en": "2010–2011",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Rey",
+      "Champions League",
+      "Supercopa de España"
+    ],
+    "league_position": 1,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "La Liga",
+      "Champions League"
+    ]
+  },
+  "matches": [
+    {
+      "date": "2010-11-29",
+      "competition": "La Liga",
+      "round": null,
+      "home": "FC Barcelona",
+      "away": "Real Madrid",
+      "score": "5-0",
+      "half_time": null,
+      "notes": "فوز برشلونة الساحق على ريال مدريد في كامب نو في أول كلاسيكو لجوزيه مورينيو مع الريال، مع هدفين لدافيد فيا",
+      "is_notable": true
+    },
+    {
+      "date": "2011-04-20",
+      "competition": "Copa del Rey",
+      "round": "Final",
+      "home": "Real Madrid",
+      "away": "FC Barcelona",
+      "score": "1-0",
+      "half_time": "0-0",
+      "notes": "خسارة برشلونة نهائي كأس الملك أمام ريال مدريد في ملعب مستايا بعد الوقت الإضافي، بهدف رأسي لكريستيانو رونالدو",
+      "is_notable": true
+    },
+    {
+      "date": "2011-05-28",
+      "competition": "Champions League",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Manchester United",
+      "score": "3-1",
+      "half_time": "1-1",
+      "notes": "برشلونة يتوج بلقبه الرابع في دوري أبطال أوروبا بالفوز على مانشستر يونايتد في نهائي ويمبلي، أهداف بيدرو وميسي وفيا مقابل هدف تعادل مؤقت لروني",
+      "is_notable": true
+    }
+  ]
+}

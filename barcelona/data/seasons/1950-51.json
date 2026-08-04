@@ -1,0 +1,38 @@
+{
+  "id": "1950-51",
+  "label_ar": "١٩٥٠–١٩٥١",
+  "label_en": "1950–1951",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Generalísimo"
+    ],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "Copa del Generalísimo"
+    ]
+  },
+  "matches": [
+    {
+      "date": "1950",
+      "competition": "Friendly",
+      "round": null,
+      "home": "FC Barcelona",
+      "away": null,
+      "score": null,
+      "half_time": null,
+      "notes": "وصول لاسلو كوبالا إلى برشلونة بعد فراره من المجر عبر أوروبا الغربية مع فريق منفيين، ليبدأ التوقيع له واحدة من أهم الحقبات في تاريخ النادي، رغم تأخر ظهوره الرسمي في المباريات الرسمية بسبب نزاع دولي حول تسجيله",
+      "is_notable": true
+    }
+  ]
+}

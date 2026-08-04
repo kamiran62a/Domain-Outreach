@@ -1,0 +1,27 @@
+{
+  "id": "1958-59",
+  "label_ar": "١٩٥٨–١٩٥٩",
+  "label_en": "1958–1959",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Generalísimo"
+    ],
+    "league_position": 1,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "La Liga",
+      "Copa del Generalísimo"
+    ]
+  },
+  "matches": []
+}

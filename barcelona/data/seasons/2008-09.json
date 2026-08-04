@@ -1,0 +1,91 @@
+{
+  "id": "2008-09",
+  "label_ar": "٢٠٠٨–٢٠٠٩",
+  "label_en": "2008–2009",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Rey",
+      "Champions League",
+      "Supercopa de España",
+      "UEFA Super Cup",
+      "FIFA Club World Cup"
+    ],
+    "league_position": 1,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "La Liga",
+      "Copa del Rey",
+      "Champions League",
+      "Supercopa de España",
+      "UEFA Super Cup",
+      "FIFA Club World Cup"
+    ]
+  },
+  "matches": [
+    {
+      "date": "2009-05-02",
+      "competition": "La Liga",
+      "round": null,
+      "home": "Real Madrid",
+      "away": "FC Barcelona",
+      "score": "2-6",
+      "half_time": null,
+      "notes": "فوز تاريخي لبرشلونة في سانتياغو برنابيو ضمن مسيرته نحو لقب السداسية التاريخية بقيادة غوارديولا وميسي",
+      "is_notable": true
+    },
+    {
+      "date": "2009-05-13",
+      "competition": "Copa del Rey",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Athletic Bilbao",
+      "score": "4-1",
+      "half_time": null,
+      "notes": "برشلونة يتوج بكأس ملك إسبانيا في مباراة أقيمت في ملعب مستايا بفالنسيا، ثاني ألقاب موسم السداسية التاريخية",
+      "is_notable": true
+    },
+    {
+      "date": "2009-05-27",
+      "competition": "Champions League",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Manchester United",
+      "score": "2-0",
+      "half_time": "1-0",
+      "notes": "الموسم السداسي التاريخي بقيادة غوارديولا وميسي، أهداف إيتو وميسي في نهائي روما ليتوج برشلونة بلقبه الثالث في دوري أبطال أوروبا",
+      "is_notable": true
+    },
+    {
+      "date": "2009-08-28",
+      "competition": "UEFA Super Cup",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Shakhtar Donetsk",
+      "score": "1-0",
+      "half_time": "0-0",
+      "notes": "برشلونة يحرز السوبر الأوروبي بفوزه على شاختار دونيتسك في موناكو بهدف بيدرو في الوقت الإضافي، أحد الألقاب الستة التاريخية",
+      "is_notable": true
+    },
+    {
+      "date": "2009-12-19",
+      "competition": "FIFA Club World Cup",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Estudiantes",
+      "score": "2-1",
+      "half_time": "0-1",
+      "notes": "برشلونة يحرز كأس العالم للأندية في أبوظبي بعد الوقت الإضافي، تعادل ميسي برأسية في الوقت بدل الضائع وهدف الفوز لبيدرو، ليكمل السداسية التاريخية",
+      "is_notable": true
+    }
+  ]
+}

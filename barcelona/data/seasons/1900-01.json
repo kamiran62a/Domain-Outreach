@@ -1,0 +1,36 @@
+{
+  "id": "1900-01",
+  "label_ar": "١٩٠٠–١٩٠١",
+  "label_en": "1900–1901",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "Friendly",
+      "Campionat de Catalunya"
+    ],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": []
+  },
+  "matches": [
+    {
+      "date": "1900",
+      "competition": "Club history (not a match)",
+      "round": null,
+      "home": null,
+      "away": null,
+      "score": null,
+      "half_time": null,
+      "notes": "تأسس النادي المنافس ريال كلوب ديبورتيبو إسبانيول في أكتوبر ١٩٠٠، لتنطلق بذلك أولى مواجهات ما يُعرف لاحقاً بـ\"ديربي برشلونة\" المحلي في مباريات ودية خلال هذه الفترة. لا تتوفر لدي تفاصيل موثوقة بدرجة كافية عن تاريخ أو نتيجة أول مواجهة رسمية بين الناديين لإدراجها كمباراة مؤكدة.",
+      "is_notable": true
+    }
+  ]
+}

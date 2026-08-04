@@ -1,0 +1,33 @@
+{
+  "id": "1987-88",
+  "label_ar": "١٩٨٧–١٩٨٨",
+  "label_en": "1987–1988",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": ["La Liga", "Copa del Rey"],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": ["Copa del Rey"]
+  },
+  "matches": [
+    {
+      "date": "1988-06-05",
+      "competition": "Copa del Rey",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Real Sociedad",
+      "score": "1-0",
+      "half_time": null,
+      "notes": "لقب كأس الملك جاء في موسم مضطرب داخل النادي عقب أزمة 'ميثاق الهيسبيريا' وتمرد مجموعة من اللاعبين ضد رئاسة النادي، قبل قدوم يوهان كرويف مدرباً في الموسم التالي",
+      "is_notable": true
+    }
+  ]
+}

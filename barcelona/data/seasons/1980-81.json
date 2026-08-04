@@ -1,0 +1,33 @@
+{
+  "id": "1980-81",
+  "label_ar": "١٩٨٠–١٩٨١",
+  "label_en": "1980–1981",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": ["La Liga", "Copa del Rey"],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": ["Copa del Rey"]
+  },
+  "matches": [
+    {
+      "date": "1981-06-27",
+      "competition": "Copa del Rey",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Sporting de Gijón",
+      "score": "3-1",
+      "half_time": null,
+      "notes": "برشلونة يفوز بكأس ملك إسبانيا بعد أشهر قليلة من عودة نجم الفريق كيني من محنة اختطافه لعدة أسابيع في مارس ١٩٨١، وهي واحدة من أكثر الحوادث إثارة في تاريخ النادي",
+      "is_notable": true
+    }
+  ]
+}

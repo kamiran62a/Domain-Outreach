@@ -1,0 +1,187 @@
+{
+  "id": "2011-12",
+  "label_ar": "٢٠١١–٢٠١٢",
+  "label_en": "2011–2012",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات الدوري لهذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ مباريات دوري أبطال أوروبا الموضحة هنا حقيقية وموثقة من مصدر بيانات مفتوح.",
+  "disclaimer_en": "This season's league data was reconstructed from the model's general knowledge and has not been verified against a primary source; the Champions League matches shown here are real and sourced from an open data source.",
+  "data_coverage": {
+    "La Liga": "not available — reconstructed from general knowledge",
+    "Champions League": "full (openfootball)",
+    "Copa del Rey": "not available — no verified source",
+    "Supercopa de España": "not available — no verified source"
+  },
+  "summary": {
+    "competitions": [
+      "Copa del Rey",
+      "Champions League"
+    ],
+    "league_position": 2,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "Copa del Rey",
+      "Supercopa de España"
+    ]
+  },
+  "matches": [
+    {
+      "date": "2011-09-13",
+      "competition": "Champions League",
+      "round": "Group H",
+      "home": "FC Barcelona",
+      "away": "AC Milan",
+      "score": "2-2",
+      "half_time": "1-1",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2011-09-28",
+      "competition": "Champions League",
+      "round": "Group H",
+      "home": "BATE Borisov",
+      "away": "FC Barcelona",
+      "score": "0-5",
+      "half_time": "0-3",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2011-10-19",
+      "competition": "Champions League",
+      "round": "Group H",
+      "home": "FC Barcelona",
+      "away": "Viktoria Plzeň",
+      "score": "2-0",
+      "half_time": "1-0",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2011-11-01",
+      "competition": "Champions League",
+      "round": "Group H",
+      "home": "Viktoria Plzeň",
+      "away": "FC Barcelona",
+      "score": "0-4",
+      "half_time": "0-2",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2011-11-23",
+      "competition": "Champions League",
+      "round": "Group H",
+      "home": "AC Milan",
+      "away": "FC Barcelona",
+      "score": "2-3",
+      "half_time": "1-2",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2011-12-06",
+      "competition": "Champions League",
+      "round": "Group H",
+      "home": "FC Barcelona",
+      "away": "BATE Borisov",
+      "score": "4-0",
+      "half_time": "1-0",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2012-02-14",
+      "competition": "Champions League",
+      "round": "Round of 16",
+      "home": "Bayer Leverkusen",
+      "away": "FC Barcelona",
+      "score": "1-3",
+      "half_time": "0-1",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2012-03-07",
+      "competition": "Champions League",
+      "round": "Round of 16",
+      "home": "FC Barcelona",
+      "away": "Bayer Leverkusen",
+      "score": "7-1",
+      "half_time": "2-0",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2012-03-28",
+      "competition": "Champions League",
+      "round": "Quarterfinals",
+      "home": "AC Milan",
+      "away": "FC Barcelona",
+      "score": "0-0",
+      "half_time": null,
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2012-04-03",
+      "competition": "Champions League",
+      "round": "Quarterfinals",
+      "home": "FC Barcelona",
+      "away": "AC Milan",
+      "score": "3-1",
+      "half_time": "2-1",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2012-04-18",
+      "competition": "Champions League",
+      "round": "Semifinals",
+      "home": "Chelsea FC",
+      "away": "FC Barcelona",
+      "score": "1-0",
+      "half_time": "1-0",
+      "notes": null,
+      "is_notable": false
+    },
+    {
+      "date": "2012-04-24",
+      "competition": "Champions League",
+      "round": "Semifinals",
+      "home": "FC Barcelona",
+      "away": "Chelsea FC",
+      "score": "2-2",
+      "half_time": "2-1",
+      "notes": "خروج برشلونة من نصف نهائي دوري الأبطال أمام تشيلسي رغم الفوز في مباراة الإياب",
+      "is_notable": true
+    },
+    {
+      "date": "2011-08-17",
+      "competition": "Supercopa de España",
+      "round": null,
+      "home": "FC Barcelona",
+      "away": "Real Madrid",
+      "score": null,
+      "half_time": null,
+      "notes": "برشلونة بطل السوبر الإسباني بعد التعادل في مجموع المباراتين وتفوقه بقاعدة الأهداف خارج الأرض (بيانات غير موثقة من مصدر مباشر)",
+      "is_notable": true
+    },
+    {
+      "date": "2012-05-25",
+      "competition": "Copa del Rey",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Athletic Bilbao",
+      "score": "3-0",
+      "half_time": null,
+      "notes": "برشلونة بطل كأس ملك إسبانيا (بيانات غير موثقة من مصدر مباشر)",
+      "is_notable": true
+    }
+  ]
+}

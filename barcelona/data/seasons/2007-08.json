@@ -1,0 +1,48 @@
+{
+  "id": "2007-08",
+  "label_ar": "٢٠٠٧–٢٠٠٨",
+  "label_en": "2007–2008",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Rey",
+      "Champions League"
+    ],
+    "league_position": 3,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": []
+  },
+  "matches": [
+    {
+      "date": "2008-04-22",
+      "competition": "Champions League",
+      "round": "Semi-final, 1st leg",
+      "home": "FC Barcelona",
+      "away": "Manchester United",
+      "score": "0-0",
+      "half_time": "0-0",
+      "notes": "تعادل سلبي في كامب نو ضمن نصف نهائي دوري الأبطال، مباراة أولى من مواجهتين ستتكرران بشكل مقلوب في نهائي 2009",
+      "is_notable": true
+    },
+    {
+      "date": "2008-04-29",
+      "competition": "Champions League",
+      "round": "Semi-final, 2nd leg",
+      "home": "Manchester United",
+      "away": "FC Barcelona",
+      "score": "1-0",
+      "half_time": "1-0",
+      "notes": "مانشستر يونايتد يقصي برشلونة بهدف بول سكولز ليتأهل إلى النهائي الذي حسمه لاحقاً أمام تشيلسي",
+      "is_notable": true
+    }
+  ]
+}

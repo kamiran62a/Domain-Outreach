@@ -1,0 +1,61 @@
+{
+  "id": "1957-58",
+  "label_ar": "١٩٥٧–١٩٥٨",
+  "label_en": "1957–1958",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Generalísimo",
+      "Inter-Cities Fairs Cup"
+    ],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "Inter-Cities Fairs Cup"
+    ]
+  },
+  "matches": [
+    {
+      "date": "1957-09-24",
+      "competition": "Friendly",
+      "round": null,
+      "home": "FC Barcelona",
+      "away": "Warsaw Select XI",
+      "score": "4-2",
+      "half_time": null,
+      "notes": "مباراة افتتاح ملعب الكامب نو الجديد رسمياً",
+      "is_notable": true
+    },
+    {
+      "date": "1958-03",
+      "competition": "Inter-Cities Fairs Cup",
+      "round": "النهائي (ذهاب)",
+      "home": "London XI",
+      "away": "FC Barcelona",
+      "score": "2-2",
+      "half_time": null,
+      "notes": "مباراة ذهاب نهائي أول نسخة من كأس المعارض الأوروبية (إنتر-سيتيز فيرز كوب)",
+      "is_notable": true
+    },
+    {
+      "date": "1958-03",
+      "competition": "Inter-Cities Fairs Cup",
+      "round": "النهائي (إياب)",
+      "home": "FC Barcelona",
+      "away": "London XI",
+      "score": "6-0",
+      "half_time": null,
+      "notes": "برشلونة يتوج بأول نسخة من كأس المعارض الأوروبية بفوز ساحق في مباراة الإياب، ليحقق مجموع 8-2 في النهائي",
+      "is_notable": true
+    }
+  ]
+}

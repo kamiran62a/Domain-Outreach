@@ -1,0 +1,33 @@
+{
+  "id": "1991-92",
+  "label_ar": "١٩٩١–١٩٩٢",
+  "label_en": "1991–1992",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": ["La Liga", "Copa del Rey", "European Cup"],
+    "league_position": 1,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": ["La Liga", "European Cup"]
+  },
+  "matches": [
+    {
+      "date": "1992-05-20",
+      "competition": "European Cup",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Sampdoria",
+      "score": "1-0",
+      "half_time": "0-0",
+      "notes": "أول لقب لبرشلونة في كأس أوروبا للأبطال، هدف كومان في الشوط الإضافي في ملعب ويمبلي بلندن، وتتويج 'فريق الأحلام' بقيادة يوهان كرويف بأعظم إنجاز في تاريخ النادي حتى ذلك الحين",
+      "is_notable": true
+    }
+  ]
+}

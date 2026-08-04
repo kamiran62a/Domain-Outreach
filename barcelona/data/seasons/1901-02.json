@@ -1,0 +1,36 @@
+{
+  "id": "1901-02",
+  "label_ar": "١٩٠١–١٩٠٢",
+  "label_en": "1901–1902",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "Campionat de Catalunya",
+      "Copa del Rey"
+    ],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": []
+  },
+  "matches": [
+    {
+      "date": "1902-04",
+      "competition": "Copa de la Coronación (forerunner of Copa del Rey)",
+      "round": "Final",
+      "home": "Vizcaya (representative Bilbao select team)",
+      "away": "FC Barcelona",
+      "score": "2-1",
+      "half_time": null,
+      "notes": "خسر برشلونة نهائي أول نسخة من البطولة التي عُرفت لاحقاً بكأس ملك إسبانيا (كوپا ديل ري)، والتي أُقيمت في مدريد بمناسبة تتويج الملك ألفونسو الثالث عشر، أمام منتخب تمثيلي لأندية بلباو (فيزكايا). يُعد هذا أول ظهور بارز لبرشلونة في بطولة ذات طابع وطني، رغم أن اليوم الدقيق للمباراة غير مؤكد بشكل كامل لدي.",
+      "is_notable": true
+    }
+  ]
+}

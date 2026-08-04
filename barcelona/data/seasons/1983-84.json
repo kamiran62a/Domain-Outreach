@@ -1,0 +1,44 @@
+{
+  "id": "1983-84",
+  "label_ar": "١٩٨٣–١٩٨٤",
+  "label_en": "1983–1984",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": ["La Liga", "Copa del Rey", "European Cup Winners' Cup"],
+    "league_position": 2,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": []
+  },
+  "matches": [
+    {
+      "date": "1983-09-24",
+      "competition": "La Liga",
+      "round": null,
+      "home": "Athletic Bilbao",
+      "away": "FC Barcelona",
+      "score": "2-1",
+      "half_time": null,
+      "notes": "تدخل شرس من مدافع أتلتيك بلباو أندوني غويكوتشيا على مارادونا تسبب في كسر في كاحله وغيابه لعدة أشهر",
+      "is_notable": true
+    },
+    {
+      "date": "1984-05-05",
+      "competition": "Copa del Rey",
+      "round": "Final",
+      "home": "Athletic Bilbao",
+      "away": "FC Barcelona",
+      "score": "1-0",
+      "half_time": null,
+      "notes": "برشلونة وصيف البطل بعد الخسارة أمام أتلتيك بلباو في نهائي كأس الملك، والمباراة اشتهرت بشجار جماعي عنيف بمشاركة مارادونا أمام الملك خوان كارلوس، وكانت آخر مباراة لمارادونا مع برشلونة قبل انتقاله إلى نابولي",
+      "is_notable": true
+    }
+  ]
+}

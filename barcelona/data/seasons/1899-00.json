@@ -1,0 +1,35 @@
+{
+  "id": "1899-00",
+  "label_ar": "١٨٩٩–١٩٠٠",
+  "label_en": "1899–1900",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "Friendly"
+    ],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": []
+  },
+  "matches": [
+    {
+      "date": "1899-12-08",
+      "competition": "Friendly",
+      "round": null,
+      "home": "FC Barcelona",
+      "away": "Mixed team of British and Swiss residents in Barcelona",
+      "score": "1-0",
+      "half_time": null,
+      "notes": "أول مباراة رسمية موثقة لنادي برشلونة، أُقيمت بعد أسابيع قليلة من تأسيس النادي في ٢٩ نوفمبر ١٨٩٩ على يد خوان غامبر (هانس غامبر) ومجموعة من الرياضيين الأجانب والكتالونيين. تُجمع أغلب المصادر التاريخية على فوز برشلونة ١-٠، لكن التشكيلة الدقيقة لفريق الخصم وبعض تفاصيل المباراة تبقى غير موثقة بشكل قاطع، إذ لم تكن هناك تغطية صحفية منتظمة لكرة القدم في تلك الفترة المبكرة جداً.",
+      "is_notable": true
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "2009-10",
+  "label_ar": "٢٠٠٩–٢٠١٠",
+  "label_en": "2009–2010",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Rey",
+      "Champions League"
+    ],
+    "league_position": 1,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "La Liga"
+    ]
+  },
+  "matches": [
+    {
+      "date": "2010-04-20",
+      "competition": "Champions League",
+      "round": "Semi-final, 1st leg",
+      "home": "Inter Milan",
+      "away": "FC Barcelona",
+      "score": "3-1",
+      "half_time": null,
+      "notes": "إنتر ميلان بقيادة مورينيو يفوز في سان سيرو ضمن نصف نهائي درامي حسمه لاحقاً بالتأهل إلى النهائي الذي فاز به على بايرن ميونخ",
+      "is_notable": true
+    },
+    {
+      "date": "2010-04-28",
+      "competition": "Champions League",
+      "round": "Semi-final, 2nd leg",
+      "home": "FC Barcelona",
+      "away": "Inter Milan",
+      "score": "1-0",
+      "half_time": null,
+      "notes": "برشلونة يفوز بهدف بيكيه في كامب نو لكنه يودع دوري الأبطال بخسارة مجموع اللقاءين 2-3 أمام إنتر ميلان رغم لعب الأخير بعشرة لاعبين لمعظم الشوط الثاني",
+      "is_notable": true
+    }
+  ]
+}

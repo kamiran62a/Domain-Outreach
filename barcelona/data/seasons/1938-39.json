@@ -1,0 +1,33 @@
+{
+  "id": "1938-39",
+  "label_ar": "١٩٣٨–١٩٣٩",
+  "label_en": "1938–1939",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": ["La Liga — suspended (Spanish Civil War)"],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": []
+  },
+  "matches": [
+    {
+      "date": "1939-04",
+      "competition": "Club history (not a match)",
+      "round": null,
+      "home": null,
+      "away": null,
+      "score": null,
+      "half_time": null,
+      "notes": "انتهت الحرب الأهلية الإسبانية في أبريل ١٩٣٩. لم تُستأنف مسابقة الليغا الإسبانية بشكل كامل حتى موسم ١٩٣٩–١٩٤٠.",
+      "is_notable": true
+    }
+  ]
+}

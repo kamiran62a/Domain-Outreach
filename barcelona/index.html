@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>برشلونة عبر التاريخ</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-row">
+    <div class="brand">
+      <div class="crest">FCB</div>
+      <div>
+        <h1>برشلونة عبر التاريخ</h1>
+        <p id="subtitle">نتائج مباريات نادي برشلونة من أول مباراة رسمية حتى اليوم</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn" id="lang-toggle" type="button">EN</button>
+    </div>
+  </div>
+  <div class="stats-bar" id="stats-bar"></div>
+</header>
+
+<main>
+  <div class="controls" id="controls">
+    <div class="search-row">
+      <input type="text" id="search-input" placeholder="ابحث عن خصم…">
+      <select id="competition-select"></select>
+      <button class="btn" id="verified-toggle" type="button" style="background:transparent;border-color:var(--border);color:var(--text);"></button>
+    </div>
+    <div class="decade-chips" id="decade-chips"></div>
+  </div>
+
+  <div id="search-results"></div>
+  <div id="season-list"></div>
+  <div id="detail-panel" hidden></div>
+</main>
+
+<footer class="site-footer">
+  <p id="footer-note"></p>
+  <p><span id="data-source-label">مصدر البيانات</span>: <a href="https://github.com/openfootball/espana" target="_blank" rel="noopener">openfootball/espana</a>, <a href="https://github.com/openfootball/champions-league" target="_blank" rel="noopener">openfootball/champions-league</a></p>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

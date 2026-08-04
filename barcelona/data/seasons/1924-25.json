@@ -1,0 +1,49 @@
+{
+  "id": "1924-25",
+  "label_ar": "١٩٢٤–١٩٢٥",
+  "label_en": "1924–1925",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "Campionat de Catalunya",
+      "Copa del Rey"
+    ],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "Copa del Rey"
+    ]
+  },
+  "matches": [
+    {
+      "date": "1925",
+      "competition": "Club history (not a match)",
+      "round": null,
+      "home": null,
+      "away": null,
+      "score": null,
+      "half_time": null,
+      "notes": "يُذكر عادة أن برشلونة توّج بلقب كأس الملك لعام ١٩٢٥، دون أن تتوفر لدي تفاصيل موثوقة كافية عن هوية الخصم في النهائي أو النتيجة الدقيقة لإدراجها كحقيقة مؤكدة.",
+      "is_notable": true
+    },
+    {
+      "date": "1925-06",
+      "competition": "Club history (not a match)",
+      "round": null,
+      "home": null,
+      "away": null,
+      "score": null,
+      "half_time": null,
+      "notes": "في يونيو ١٩٢٥، خلال مباراة ودية على ملعب ليس كورتس ضد فريق من طاقم سفينة بريطانية زائرة، صفّر الجمهور الكتالوني احتجاجاً أثناء عزف النشيد الملكي الإسباني (المارتشا ريال) وصفّق بحرارة للنشيد البريطاني \"الله يحفظ الملك\"، في مشهد اعتُبر تعبيراً عن رفض شعبي لدكتاتورية بريمو دي ريبيرا. أدت الحادثة إلى إغلاق السلطات لملعب النادي لمدة ستة أشهر واستقالة الرئيس المؤسس خوان غامبر لاحقاً تحت الضغط. النتيجة الدقيقة لتلك المباراة الودية غير مؤكدة لدي.",
+      "is_notable": true
+    }
+  ]
+}

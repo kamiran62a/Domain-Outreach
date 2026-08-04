@@ -1,0 +1,38 @@
+{
+  "id": "1967-68",
+  "label_ar": "١٩٦٧–١٩٦٨",
+  "label_en": "1967–1968",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Generalísimo"
+    ],
+    "league_position": null,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "Copa del Generalísimo"
+    ]
+  },
+  "matches": [
+    {
+      "date": "1968-06",
+      "competition": "Copa del Generalísimo",
+      "round": "Final",
+      "home": "Real Madrid",
+      "away": "FC Barcelona",
+      "score": "0-1",
+      "half_time": null,
+      "notes": "فوز تاريخي لبرشلونة خارج أرضه على ريال مدريد في نهائي كأس الجنرالسيمو المقام في ملعب سانتياغو برنابيو، بهدف سجله زالدوا، وهو ما عُرف لاحقاً بلقب \"هدف زالدوا\" الشهير.",
+      "is_notable": true
+    }
+  ]
+}

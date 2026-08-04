@@ -1,0 +1,51 @@
+{
+  "id": "2005-06",
+  "label_ar": "٢٠٠٥–٢٠٠٦",
+  "label_en": "2005–2006",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Rey",
+      "Champions League"
+    ],
+    "league_position": 1,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "La Liga",
+      "Champions League"
+    ]
+  },
+  "matches": [
+    {
+      "date": "2005-11-19",
+      "competition": "La Liga",
+      "round": null,
+      "home": "Real Madrid",
+      "away": "FC Barcelona",
+      "score": "0-3",
+      "half_time": null,
+      "notes": "فوز كبير لبرشلونة في سانتياغو برنابيو مع هدفين لرونالدينيو الذي حظي بتصفيق من جمهور الريال نفسه تقديراً لمستواه",
+      "is_notable": true
+    },
+    {
+      "date": "2006-05-17",
+      "competition": "Champions League",
+      "round": "Final",
+      "home": "FC Barcelona",
+      "away": "Arsenal",
+      "score": "2-1",
+      "half_time": "0-1",
+      "notes": "برشلونة يتوج بلقبه الثاني في دوري أبطال أوروبا بالفوز على آرسنال في نهائي ستاد دو فرانس بباريس، بعد أن كان متأخراً 0-1، بهدفين لإيتو وبيليتي",
+      "is_notable": true
+    }
+  ]
+}

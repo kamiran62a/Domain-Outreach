@@ -1,0 +1,49 @@
+{
+  "id": "1973-74",
+  "label_ar": "١٩٧٣–١٩٧٤",
+  "label_en": "1973–1974",
+  "source": "reconstructed",
+  "disclaimer_ar": "بيانات هذا الموسم معادة بناؤها من المعرفة العامة للنموذج ولم يتم التحقق منها من مصدر بيانات مباشر؛ قد تكون غير كاملة أو تحتوي على أخطاء، خصوصاً في المباريات غير المشهورة.",
+  "disclaimer_en": "This season's data was reconstructed from the model's general knowledge and has not been verified against a primary source; it may be incomplete or contain inaccuracies, especially for lesser-known matches.",
+  "data_coverage": null,
+  "summary": {
+    "competitions": [
+      "La Liga",
+      "Copa del Generalísimo"
+    ],
+    "league_position": 1,
+    "played": null,
+    "won": null,
+    "drawn": null,
+    "lost": null,
+    "goals_for": null,
+    "goals_against": null,
+    "trophies": [
+      "La Liga"
+    ]
+  },
+  "matches": [
+    {
+      "date": "1973-09",
+      "competition": "La Liga",
+      "round": null,
+      "home": "FC Barcelona",
+      "away": "Granada CF",
+      "score": "4-0",
+      "half_time": null,
+      "notes": "الظهور الأول ليوهان كرويف بقميص برشلونة في الدوري الإسباني بعد انتقاله بصفقة قياسية عالمياً من أياكس صيف 1973، وفوز ساحق على غرناطة.",
+      "is_notable": true
+    },
+    {
+      "date": "1974-02-17",
+      "competition": "La Liga",
+      "round": null,
+      "home": "Real Madrid",
+      "away": "FC Barcelona",
+      "score": "0-5",
+      "half_time": null,
+      "notes": "فوز تاريخي 5-0 على ريال مدريد في ملعب سانتياغو برنابيو بقيادة كرويف في موسمه الأول، وهي واحدة من أشهر نتائج الكلاسيكو على الإطلاق، وساهمت في حسم لقب الدوري لصالح برشلونة ذلك الموسم.",
+      "is_notable": true
+    }
+  ]
+}
