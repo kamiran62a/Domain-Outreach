@@ -1,0 +1,699 @@
+{
+  "name": "YouTube Shorts - daily Arabic story",
+  "nodes": [
+    {
+      "name": "Every day",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1,
+              "triggerAtHour": 18,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "node-0",
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "name": "Run now (test)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "parameters": {},
+      "id": "node-1",
+      "position": [
+        0,
+        500
+      ]
+    },
+    {
+      "name": "Settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "s0",
+              "name": "story_theme",
+              "value": "قصص قصيرة غامضة ومؤثرة من التراث العربي والحكايات الشعبية",
+              "type": "string"
+            },
+            {
+              "id": "s1",
+              "name": "image_style",
+              "value": "cinematic digital painting, warm lantern light, Arabian old town, rich detail, 9:16 vertical",
+              "type": "string"
+            },
+            {
+              "id": "s2",
+              "name": "scenes",
+              "value": 6,
+              "type": "number"
+            },
+            {
+              "id": "s3",
+              "name": "claude_model",
+              "value": "claude-opus-5-5",
+              "type": "string"
+            },
+            {
+              "id": "s4",
+              "name": "elevenlabs_voice_id",
+              "value": "PASTE_VOICE_ID",
+              "type": "string"
+            },
+            {
+              "id": "s5",
+              "name": "privacy",
+              "value": "private",
+              "type": "string"
+            },
+            {
+              "id": "s6",
+              "name": "category_id",
+              "value": "24",
+              "type": "string"
+            },
+            {
+              "id": "s7",
+              "name": "region",
+              "value": "SA",
+              "type": "string"
+            },
+            {
+              "id": "s8",
+              "name": "workdir",
+              "value": "/data/work",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "node-2",
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "name": "Build Claude request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "// Builds the Claude request. Titles already published live in this workflow's static data,\n// so the story doesn't repeat itself.\nconst cfg = $('Settings').first().json;\nconst recent = ($getWorkflowStaticData('global').recent || []).slice(-40);\nconst SYSTEM = \"أنت كاتب قصص قصيرة لقناة يوتيوب شورتس عربية. تكتب بالعربية الفصحى البسيطة التي تُسمع بسهولة.\\n\\nقواعد القصة:\\n- مدة السرد 45 إلى 55 ثانية: بين 110 و140 كلمة.\\n- الجملة الأولى هي الخطّاف: تفتح سؤالاً لا يُغلق إلا في النهاية. لا تحية، ولا \\\"في هذا الفيديو\\\"، ولا دعوة للاشتراك في البداية.\\n- قصة واحدة، شخصية رئيسية واحدة، تحوّل واضح، ونهاية تجيب الخطّاف أو تقلبه.\\n- القصة خيالية أصلية أو من التراث الشعبي المعروف. لا تنسب أحداثاً مختلَقة لأشخاص حقيقيين، ولا تقدّم الخيال على أنه حقيقة تاريخية.\\n- لا عنف تفصيلي، ولا محتوى للكبار، ولا إساءة لدين أو جماعة.\\n- الجملة الأخيرة سؤال قصير للمشاهد يدعوه للتعليق.\\n- اكتب الأرقام كلمات حتى تُنطق صحيحاً.\\n\\nالصور: اكتب image_prompts بالإنجليزية، مشهداً لكل جزء من القصة بالترتيب، بعدد ما يُطلب منك بالضبط. نفس الأسلوب في كل الصور، ووصف ثابت للشخصية الرئيسية (العمر، الملابس، الملامح) يتكرر في كل مشهد تظهر فيه. لا نص ولا كتابة داخل الصور.\\n\\nالعنوان: أقل من 70 حرفاً، يعد بما يحدث فعلاً في القصة، وينتهي بـ #shorts.\\nthumbnail_text: من 2 إلى 5 كلمات فقط، لا يكرر العنوان.\\nالوصف: سطران عن القصة ثم 3 وسوم.\";\nconst SCHEMA = {\n \"type\": \"object\",\n \"properties\": {\n  \"title\": {\n   \"type\": \"string\"\n  },\n  \"thumbnail_text\": {\n   \"type\": \"string\"\n  },\n  \"description\": {\n   \"type\": \"string\"\n  },\n  \"tags\": {\n   \"type\": \"array\",\n   \"items\": {\n    \"type\": \"string\"\n   }\n  },\n  \"narration\": {\n   \"type\": \"string\"\n  },\n  \"image_style\": {\n   \"type\": \"string\"\n  },\n  \"image_prompts\": {\n   \"type\": \"array\",\n   \"items\": {\n    \"type\": \"string\"\n   }\n  }\n },\n \"required\": [\n  \"title\",\n  \"thumbnail_text\",\n  \"description\",\n  \"tags\",\n  \"narration\",\n  \"image_style\",\n  \"image_prompts\"\n ],\n \"additionalProperties\": false\n};\nconst body = {\n  model: cfg.claude_model,\n  max_tokens: 16000,\n  output_config: { effort: 'medium', format: { type: 'json_schema', schema: SCHEMA } },\n  fallbacks: 'default',\n  system: SYSTEM,\n  messages: [{ role: 'user', content:\n    'اكتب قصة اليوم.\\nنوع القصص في القناة: ' + cfg.story_theme +\n    '\\nعدد الصور المطلوب: ' + cfg.scenes +\n    '\\nأسلوب الصور: ' + cfg.image_style +\n    '\\n\\nعناوين نُشرت مؤخراً، لا تكرر فكرتها:\\n' + (recent.join('\\n') || '(لا شيء بعد)') }],\n};\nreturn [{ json: { body } }];"
+      },
+      "id": "node-3",
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "name": "Claude: write story",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "anthropic-beta",
+              "value": "server-side-fallback-2026-07-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.body) }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "Anthropic API"
+        }
+      },
+      "id": "node-4",
+      "position": [
+        480,
+        300
+      ]
+    },
+    {
+      "name": "Parse story",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const r = $input.first().json;\nif (r.stop_reason === 'refusal') throw new Error('Claude declined this story: ' + JSON.stringify(r.stop_details));\nif (r.stop_reason === 'max_tokens') throw new Error('Story was cut off (max_tokens)');\nconst text = (r.content || []).filter(b => b.type === 'text').map(b => b.text).join('');\nconst s = JSON.parse(text);\nconst want = $('Settings').first().json.scenes;\nif (!s.image_prompts?.length) throw new Error('No image prompts returned');\ns.image_prompts = s.image_prompts.slice(0, want);\nif (!/#shorts/i.test(s.title)) s.title = (s.title + ' #shorts').slice(0, 100);\ns.title = s.title.slice(0, 100);\nreturn [{ json: s }];"
+      },
+      "id": "node-5",
+      "position": [
+        720,
+        300
+      ]
+    },
+    {
+      "name": "ElevenLabs: voice",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.elevenlabs.io/v1/text-to-speech/{{ $('Settings').first().json.elevenlabs_voice_id }}/with-timestamps?output_format=mp3_44100_128",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: $json.narration, model_id: \"eleven_multilingual_v2\", voice_settings: { stability: 0.45, similarity_boost: 0.8, style: 0.2 } }) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "ElevenLabs API"
+        }
+      },
+      "id": "node-6",
+      "position": [
+        960,
+        300
+      ]
+    },
+    {
+      "name": "One item per scene",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const s = $('Parse story').first().json;\nreturn s.image_prompts.map((p, i) => ({ json: { i, prompt: p + '. Style: ' + s.image_style + '. No text, no letters, no watermark.' } }));"
+      },
+      "id": "node-7",
+      "position": [
+        1200,
+        300
+      ]
+    },
+    {
+      "name": "Replicate: image",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Prefer",
+              "value": "wait"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { prompt: $json.prompt, aspect_ratio: \"9:16\", output_format: \"jpg\", output_quality: 90, num_outputs: 1 } }) }}",
+        "options": {
+          "timeout": 120000,
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 1500
+            }
+          }
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "Replicate API"
+        }
+      },
+      "id": "node-8",
+      "position": [
+        1440,
+        300
+      ]
+    },
+    {
+      "name": "Build render job",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const story = $('Parse story').first().json;\nconst voice = $('ElevenLabs: voice').first().json;\nconst images = $input.all().map(it => {\n  const o = it.json.output;\n  const url = Array.isArray(o) ? o[0] : o;\n  if (!url) throw new Error('Image generation failed: ' + JSON.stringify(it.json.error || it.json.status));\n  return url;\n});\nconst d = new Date();\nconst id = d.toISOString().replace(/[-:T]/g, '').slice(0, 14);\nreturn [{ json: {\n  id, title: story.title.replace(/\\s*#shorts/i, ''), thumbnail_text: story.thumbnail_text,\n  narration: story.narration, images,\n  audio_base64: voice.audio_base64, alignment: voice.alignment || voice.normalized_alignment || null,\n} }];"
+      },
+      "id": "node-9",
+      "position": [
+        1680,
+        300
+      ]
+    },
+    {
+      "name": "To JSON file",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "parameters": {
+        "operation": "toJson",
+        "mode": "each",
+        "options": {
+          "fileName": "={{ 'job-' + $json.id + '.json' }}"
+        }
+      },
+      "id": "node-10",
+      "position": [
+        1920,
+        300
+      ]
+    },
+    {
+      "name": "Save job",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $('Settings').first().json.workdir + '/job-' + $('Build render job').first().json.id + '.json' }}",
+        "dataPropertyName": "data",
+        "options": {}
+      },
+      "id": "node-11",
+      "position": [
+        2160,
+        300
+      ]
+    },
+    {
+      "name": "Render video (ffmpeg)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "parameters": {
+        "command": "={{ 'node /scripts/render.mjs ' + $('Settings').first().json.workdir + '/job-' + $('Build render job').first().json.id + '.json' }}"
+      },
+      "id": "node-12",
+      "position": [
+        2400,
+        300
+      ]
+    },
+    {
+      "name": "Render result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const lines = String($input.first().json.stdout || '').trim().split('\\n');\nreturn [{ json: JSON.parse(lines[lines.length - 1]) }];"
+      },
+      "id": "node-13",
+      "position": [
+        2640,
+        300
+      ]
+    },
+    {
+      "name": "Read video",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "={{ $json.video }}",
+        "options": {
+          "dataPropertyName": "video"
+        }
+      },
+      "id": "node-14",
+      "position": [
+        2880,
+        300
+      ]
+    },
+    {
+      "name": "YouTube: upload",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $('Parse story').first().json.title }}",
+        "regionCode": "={{ $('Settings').first().json.region }}",
+        "categoryId": "={{ $('Settings').first().json.category_id }}",
+        "binaryProperty": "video",
+        "options": {
+          "description": "={{ $('Parse story').first().json.description }}",
+          "tags": "={{ $('Parse story').first().json.tags.join(',') }}",
+          "privacyStatus": "={{ $('Settings').first().json.privacy }}",
+          "defaultLanguage": "ar",
+          "selfDeclaredMadeForKids": false,
+          "notifySubscribers": true
+        }
+      },
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube account"
+        }
+      },
+      "id": "node-15",
+      "position": [
+        3120,
+        300
+      ]
+    },
+    {
+      "name": "Label as AI-generated",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "onError": "continueRegularOutput",
+      "parameters": {
+        "method": "PUT",
+        "url": "https://www.googleapis.com/youtube/v3/videos?part=status",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ id: $json.uploadId, status: { privacyStatus: $('Settings').first().json.privacy, selfDeclaredMadeForKids: false, containsSyntheticMedia: true } }) }}",
+        "options": {}
+      },
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube account"
+        }
+      },
+      "id": "node-16",
+      "position": [
+        3360,
+        300
+      ]
+    },
+    {
+      "name": "Read thumbnail",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "={{ $('Render result').first().json.thumb }}",
+        "options": {
+          "dataPropertyName": "thumb"
+        }
+      },
+      "id": "node-17",
+      "position": [
+        3600,
+        300
+      ]
+    },
+    {
+      "name": "YouTube: set thumbnail",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "onError": "continueRegularOutput",
+      "parameters": {
+        "method": "POST",
+        "url": "=https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={{ $('YouTube: upload').first().json.uploadId }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "youTubeOAuth2Api",
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "thumb",
+        "options": {}
+      },
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "",
+          "name": "YouTube account"
+        }
+      },
+      "id": "node-18",
+      "position": [
+        3840,
+        300
+      ]
+    },
+    {
+      "name": "Remember title",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const data = $getWorkflowStaticData('global');\nconst title = $('Parse story').first().json.title;\ndata.recent = [...(data.recent || []), title].slice(-60);\nconst id = $('YouTube: upload').first().json.uploadId;\nreturn [{ json: { published: title, url: 'https://youtube.com/shorts/' + id } }];"
+      },
+      "id": "node-19",
+      "position": [
+        4080,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Every day": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Build Claude request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Claude request": {
+      "main": [
+        [
+          {
+            "node": "Claude: write story",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: write story": {
+      "main": [
+        [
+          {
+            "node": "Parse story",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse story": {
+      "main": [
+        [
+          {
+            "node": "ElevenLabs: voice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ElevenLabs: voice": {
+      "main": [
+        [
+          {
+            "node": "One item per scene",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "One item per scene": {
+      "main": [
+        [
+          {
+            "node": "Replicate: image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replicate: image": {
+      "main": [
+        [
+          {
+            "node": "Build render job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build render job": {
+      "main": [
+        [
+          {
+            "node": "To JSON file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "To JSON file": {
+      "main": [
+        [
+          {
+            "node": "Save job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save job": {
+      "main": [
+        [
+          {
+            "node": "Render video (ffmpeg)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render video (ffmpeg)": {
+      "main": [
+        [
+          {
+            "node": "Render result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render result": {
+      "main": [
+        [
+          {
+            "node": "Read video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read video": {
+      "main": [
+        [
+          {
+            "node": "YouTube: upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YouTube: upload": {
+      "main": [
+        [
+          {
+            "node": "Label as AI-generated",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Label as AI-generated": {
+      "main": [
+        [
+          {
+            "node": "Read thumbnail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read thumbnail": {
+      "main": [
+        [
+          {
+            "node": "YouTube: set thumbnail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YouTube: set thumbnail": {
+      "main": [
+        [
+          {
+            "node": "Remember title",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run now (test)": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Riyadh",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsShared": false
+  }
+}
